@@ -2,9 +2,12 @@ package controllers
 
 import play.api.mvc.{Action, Controller}
 import play.api.libs.json._
+import akka.actor.ActorSystem
 
 
 object Application extends Controller {
+
+  val actorSystem = ActorSystem("shred")
 
   // not production ready
   var countMap: Map[String, Int] = Map()
